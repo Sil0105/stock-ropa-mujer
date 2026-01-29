@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Tienda de Ropa Mujer</title>
+
+  <!-- Estilos principales -->
+  <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+
+  <!-- ===============================
+       HEADER
+  =============================== -->
+  <header>
+    <h1>🛍️ Tienda de Ropa Mujer</h1>
+
+    <!-- Filtro por talle -->
+    <select id="filtroTalle">
+      <option value="">Todos los talles</option>
+      <option value="S">S</option>
+      <option value="M">M</option>
+      <option value="L">L</option>
+    </select>
+  </header>
+
+  <!-- ===============================
+       FORMULARIO ADMIN
+  =============================== -->
+  <section id="formulario">
+    <h2>➕ Agregar prenda (Admin)</h2>
+
+    <form id="ropaForm">
+      <input type="text" id="tipo" placeholder="Tipo de prenda" required>
+      <input type="text" id="talle" placeholder="Talle (S, M, L)" required>
+      <input type="text" id="color" placeholder="Color" required>
+      <input type="number" id="precio" placeholder="Precio" required>
+      <input type="number" id="stock" placeholder="Stock" required>
+
+      <button type="submit">Agregar</button>
+    </form>
+  </section>
+
+  <!-- ===============================
+       CONTENEDOR DE PRODUCTOS
+  =============================== -->
+  <main id="productos"></main>
+
+  <!-- Script principal -->
+  <script src="./js/app.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,119 @@
+/* ===============================
+   ESTILOS GENERALES
+================================ */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background-color: #f6f6f6;
+  margin: 0;
+  color: #333;
+}
+
+/* ===============================
+   HEADER
+================================ */
+
+header {
+  background-color: #111;
+  color: white;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 22px;
+}
+
+/* ===============================
+   GRID DE PRODUCTOS
+================================ */
+
+#productos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 25px;
+  padding: 30px;
+}
+
+/* ===============================
+   CARD DE PRODUCTO
+================================ */
+
+.card {
+  background: white;
+  border-radius: 12px;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efecto hover (cuando pasás el mouse) */
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* ===============================
+   IMAGEN
+================================ */
+
+.card img {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+/* ===============================
+   TEXTO
+================================ */
+
+.card h3 {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+.card p {
+  margin: 5px 0;
+}
+
+/* ===============================
+   STOCK
+================================ */
+
+.sin-stock {
+  color: #e74c3c;
+  font-weight: bold;
+}
+
+.stock-bajo {
+  color: #f39c12;
+  font-weight: bold;
+}
+
+/* ===============================
+   BOTONES (VISTA ADMIN)
+================================ */
+
+button {
+  background-color: #111;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+button:hover {
+  background-color: #333;
+}

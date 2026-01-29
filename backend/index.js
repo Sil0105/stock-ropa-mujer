@@ -14,7 +14,11 @@ const cors = require("cors");
 // Importamos las rutas de ropa
 // Este archivo contiene todos los endpoints relacionados con prendas
 const ropaRoutes = require("./routes/ropaRoutes");
+
+//Importamos el middleware de error
 const errorMiddleware=require("./middwares/error-middleware");
+
+const path=require("path");
 
 // ===============================
 // CONFIGURACIÓN DEL SERVIDOR
@@ -38,6 +42,8 @@ app.use(cors());
 // Gracias a esto podemos usar req.body en POST y PATCH
 app.use(express.json());
 
+app.use(express.static(path.join(__dirname, "../frontend")));
+
 // ===============================
 // RUTAS
 // ===============================
@@ -45,13 +51,18 @@ app.use(express.json());
 // Todas las rutas que empiecen con /api/ropa
 // serán manejadas por ropaRoutes
 app.use("/api/ropa", ropaRoutes);
+app.get("/",(req,res)=>{
+  res.sendFile(path.join(__dirname, "../frontend/index.html"));
+});
+app.use(errorMiddleware);
+
 
 // ===============================
 // INICIO DEL SERVIDOR
 // ===============================
 
 // Levantamos el servidor y lo ponemos a escuchar en el puerto definido
-app.use(errorMiddleware);
+
 
 app.listen(PORT, () => {
   console.log(`Servidor corriendo en http://localhost:${PORT}`);

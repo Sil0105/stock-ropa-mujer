@@ -119,7 +119,7 @@ Para futuras mejoras se recomienda:
 - Start Command: `node backend/index.js`
 
 🔗 URL de la API: 
-👉 PEGAR_ACA_LA_URL_DE_RENDER //"chicas pegamos la url"
+👉 https://stock-ropa-mujer.onrender.com
 
 ---
 
@@ -165,18 +165,8 @@ Documentación completa con Swagger
 
 ## ✍️ Autor
 
-Proyecto realizado como práctica de desarrollo backend, aplicando conceptos de:
+~ Condori Silvana
 
-API REST
+~ Herrera Katherinne
 
-Estructura MVC
-
-Modularización
-
-Integración frontend + backend
-
-Despliegue en la nube
-
-
----
-
+~ Torres Ramonell Lourdes

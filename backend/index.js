@@ -20,6 +20,8 @@ const errorMiddleware=require("./middwares/error-middleware");
 
 const path=require("path");
 
+require("dotenv").config();
+
 // ===============================
 // CONFIGURACIÓN DEL SERVIDOR
 // ===============================
@@ -28,7 +30,7 @@ const path=require("path");
 const app = express();
 
 // Definimos el puerto donde va a correr el servidor
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 // ===============================
 // MIDDLEWARES

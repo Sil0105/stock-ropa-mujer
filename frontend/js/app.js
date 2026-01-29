@@ -12,7 +12,7 @@ const filtroTalle = document.getElementById("filtroTalle");
 const form = document.getElementById("ropaForm");
 
 // URL base del backend
-const API_URL = "http://localhost:3000/api/ropa";
+const API_URL = "/api/ropa";
 
 // Modo administrador (true = admin, false = cliente)
 const esAdmin = true;

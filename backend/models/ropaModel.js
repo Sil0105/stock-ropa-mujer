@@ -1,10 +1,11 @@
 // Importamos el módulo fs (File System) de Node.js
 // fs sirve para leer y escribir archivos en la computadora
 const fs = require("fs");
+const path = require("path");
 
 // Definimos la ruta del archivo JSON
 // Este archivo funciona como nuestra base de datos
-const path = "./backend/data/ropa.json";
+const dataPath = path.join(__dirname, "../data/ropa.json");
 
 // ========================
 // OBTENER TODA LA ROPA
@@ -12,7 +13,7 @@ const path = "./backend/data/ropa.json";
 const getAllRopa = () => {
   // Leemos el archivo ropa.json
   // readFileSync lee el archivo de forma sincronizada
-  const data = fs.readFileSync(path, "utf-8");
+  const data = fs.readFileSync(dataPath, "utf-8");
 
   // Convertimos el texto JSON a un objeto de JavaScript
   return JSON.parse(data);
@@ -24,7 +25,7 @@ const getAllRopa = () => {
 const saveRopa = (ropa) => {
   // Convertimos el array de ropa a JSON
   // null, 2 es solo para que quede prolijo y legible
-  fs.writeFileSync(path, JSON.stringify(ropa, null, 2));
+  fs.writeFileSync(dataPath, JSON.stringify(ropa, null, 2));
 };
 
 // Exportamos las funciones

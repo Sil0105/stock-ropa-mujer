@@ -101,6 +101,7 @@ Servidor disponible en:
 ## 🔐 Seguridad y mejoras recomendadas
 
 La API incluye validaciones básicas y manejo de errores.
+El token a utilizar es: "6598"
 Para futuras mejoras se recomienda:
 
 - Implementar autenticación con **JWT**

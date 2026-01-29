@@ -1,6 +1,7 @@
 // ===============================
 // VARIABLES PRINCIPALES
 // ===============================
+const getToken = () => localStorage.getItem("token");
 
 // Contenedor donde se muestran las prendas
 const contenedor = document.getElementById("productos");
@@ -79,8 +80,18 @@ const mostrarRopa = (ropa) => {
 // ===============================
 
 const eliminarPrenda = async (id) => {
+  const token=getToken();
+
+  if(!token){
+    alert("Se necesita token de administrador");
+    return
+  }
+
   await fetch(`${API_URL}/${id}`, {
-    method: "DELETE"
+    method: "DELETE",
+    headers:{
+      "Authorization": "Bearer" + token
+    }
   });
 
   const ropa = await obtenerRopa();

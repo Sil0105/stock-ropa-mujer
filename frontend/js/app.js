@@ -90,7 +90,7 @@ const eliminarPrenda = async (id) => {
   await fetch(`${API_URL}/${id}`, {
     method: "DELETE",
     headers:{
-      "Authorization": "Bearer" + token
+      "Authorization": localStorage.getItem("token");
     }
   });
 

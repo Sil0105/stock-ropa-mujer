@@ -44,7 +44,10 @@ app.use(cors());
 // Gracias a esto podemos usar req.body en POST y PATCH
 app.use(express.json());
 
-app.use(express.static(path.join(__dirname, "../frontend")));
+const frontendPath = path.resolve(__dirname, "../frontend");
+console.log("📁 Frontend path:", frontendPath);
+
+app.use(express.static(frontendPath));
 
 // ===============================
 // RUTAS
@@ -53,8 +56,8 @@ app.use(express.static(path.join(__dirname, "../frontend")));
 // Todas las rutas que empiecen con /api/ropa
 // serán manejadas por ropaRoutes
 app.use("/api/ropa", ropaRoutes);
-app.get("/",(req,res)=>{
-  res.sendFile(path.join(__dirname, "../frontend/index.html"));
+app.get("/", (req, res)=>{
+  res.sendFile(path.join(frontendPath, "index.html"));
 });
 app.use(errorMiddleware);
 

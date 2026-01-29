@@ -8,6 +8,7 @@ const express = require("express");
 // Creamos una instancia del Router
 // El Router nos permite definir rutas separadas del index.js
 const router = express.Router();
+const  authMiddleware=require("../middwares/auth-middleware");
 
 // Importamos las funciones del controller
 // Cada función maneja una acción del CRUD
@@ -39,11 +40,11 @@ router.post("/", createRopa);
 
 // ---------------- PATCH ----------------
 // Actualizar una prenda existente
-router.patch("/:id", updateRopa);
 
 // ---------------- DELETE ----------------
 // Eliminar una prenda por ID
-router.delete("/:id", deleteRopa);
+router.patch("/:id",  authMiddleware, updateRopa);
+router.delete("/:id", authMiddleware, deleteRopa);
 
 // ===============================
 // EXPORTACIÓN

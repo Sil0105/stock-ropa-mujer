@@ -14,6 +14,7 @@ const cors = require("cors");
 // Importamos las rutas de ropa
 // Este archivo contiene todos los endpoints relacionados con prendas
 const ropaRoutes = require("./routes/ropaRoutes");
+const errorMiddleware=require("./middwares/error-middleware");
 
 // ===============================
 // CONFIGURACIÓN DEL SERVIDOR
@@ -50,6 +51,8 @@ app.use("/api/ropa", ropaRoutes);
 // ===============================
 
 // Levantamos el servidor y lo ponemos a escuchar en el puerto definido
+app.use(errorMiddleware);
+
 app.listen(PORT, () => {
   console.log(`Servidor corriendo en http://localhost:${PORT}`);
 });
